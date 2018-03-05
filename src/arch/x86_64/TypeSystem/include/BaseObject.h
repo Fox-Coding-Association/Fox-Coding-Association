@@ -11,12 +11,12 @@ class BaseObject{
 	public:
 		int refcount;
 		BaseObject();
-		virtual BaseObject * __add__(BaseObject * A, BaseObject * B);
-		virtual BaseObject * __sub__(BaseObject * A, BaseObject * B);
-		virtual BaseObject * __mul__(BaseObject * A, BaseObject * B);
-		virtual BaseObject * __div__(BaseObject * A, BaseObject * B);
-		virtual BaseObject * __pow__(BaseObject * A, BaseObject * B);
-		virtual BaseObject * __mod__(BaseObject * A, BaseObject * B);
+		virtual BaseObject * __add__(BaseObject * other) = 0;
+		virtual BaseObject * __sub__(BaseObject * other) = 0;
+		virtual BaseObject * __mul__(BaseObject * other) = 0;
+		virtual BaseObject * __div__(BaseObject * other) = 0;
+		virtual BaseObject * __pow__(BaseObject * other) = 0;
+		virtual BaseObject * __mod__(BaseObject * other) = 0;
 
 
 		virtual std::string __type__();
