@@ -4,7 +4,7 @@ arch ?= x86_64
 executable := build/$(arch)
 dirs = $(shell find src/arch/$(arch)/ -type d -print)
 includedirs :=  $(sort $(foreach dir, $(foreach dir1, $(dirs), $(shell dirname $(dir1))), $(wildcard $(dir)/include)))
-testfile = test.mach
+testfile = test.fox
 
 linker = g++
 
@@ -29,6 +29,9 @@ cpp_object_files := $(patsubst src/arch/$(arch)%.cpp, \
 
 all: $(executable)
 
+test:
+	
+	
 clean:
 	@rm -r build
 
