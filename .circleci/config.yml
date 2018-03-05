@@ -7,9 +7,5 @@ jobs:
     steps:
       - checkout
       - run:
-          name: install make
-          command: sudo apt-get update & sudo apt-get install make
-
-      - run:
           name: compile_and_run
-          command: make test
+          command: sudo apt-get update & sudo apt-get install make & make test
