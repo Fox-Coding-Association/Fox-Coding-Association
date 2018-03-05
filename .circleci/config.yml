@@ -3,11 +3,13 @@ jobs:
   build:
     docker:
       - image: debian:stretch
-  dependencies:
-    pre:
-      - sudo apt-get update; sudo apt-get install make
+
     steps:
       - checkout
+      - run:
+          name: install make
+          command: sudo apt-get update & sudo apt-get install make
+
       - run:
           name: compile_and_run
           command: make test
