@@ -21,9 +21,9 @@ c_source_files := $(foreach dir,$(dirs),$(wildcard $(dir)*.c))
 c_object_files := $(patsubst src/arch/$(arch)%.c, \
     build/arch/$(arch)%.o, $(c_source_files))
 
-cpp_source_files := $(foreach dir,$(dirs),$(wildcard $(dir)*.cpp))
-cpp_object_files := $(patsubst src/arch/$(arch)%.cpp, \
-    build/arch/$(arch)%.o, $(cpp_source_files))
+cpp_source_files := $(foreach dir,$(dirs),$(wildcard $(dir)/*.cpp))
+cpp_object_files := $(patsubst src/arch/$(arch)/%.cpp, \
+    build/arch/$(arch)/%.o, $(cpp_source_files))
 
 .PHONY: all clean run
 
