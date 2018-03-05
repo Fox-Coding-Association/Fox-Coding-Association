@@ -8,7 +8,7 @@ testfile = test.fox
 
 linker = g++
 
-CFLAGS = -Wall -c
+CFLAGS = -Wall -cpp
 CPPFLAGS = -Wall -c --std=c++11
 CFLAGS += $(foreach dir, $(includedirs), -I./$(dir))
 CPPFLAGS += $(foreach dir, $(includedirs), -I./$(dir))
@@ -29,9 +29,14 @@ cpp_object_files := $(patsubst src/arch/$(arch)%.cpp, \
 
 all: $(executable)
 
-test:
-	
-	
+install:
+	sudo apt-get install libboost-all-dev -y
+	sudo apt-get install aptitude -y
+	aptitude search boost
+
+	sudo apt-get install nasm
+
+
 clean:
 	@rm -r build
 
