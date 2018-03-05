@@ -7,7 +7,7 @@ BaseObject::BaseObject(){
 
 }
 
-string BaseObject::__type_(){
+string BaseObject::__type__(){
 	return "BaseObject";
 }
 
