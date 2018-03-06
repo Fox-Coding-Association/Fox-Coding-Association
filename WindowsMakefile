@@ -3,7 +3,7 @@ version = 0.0.1
 arch ?= x86_64
 executable := build/$(arch)
 #windows:
-dirs =  src/arch/$(arch) src/arch/$(arch)/TypeSystem src/arch/$(arch)/TypeSystem/include
+dirs =  src/arch/$(arch) src/arch/$(arch)/TypeSystem src/arch/$(arch)/TypeSystem/include src/arch/$(arch)/VirtualMachine src/arch/$(arch)/VirtualMachine/include
 includedirs :=  $(sort $(foreach dir, $(foreach dir1, $(dirs), $(shell dirname $(dir1))), $(wildcard $(dir)/include)))
 testfile = test.fox
 
