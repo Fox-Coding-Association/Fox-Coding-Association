@@ -9,6 +9,15 @@
 
 using namespace std;
 
+void printobjectstack(stack<BaseObject *> s){
+	cout<<"stack--> ";
+	while(!s.empty()){
+		cout<<s.top()->__repr__()<<"  ";
+		s.pop();		
+	}
+	cout<<endl;
+}
+
 ExecutionUnit::ExecutionUnit(){
 
 }
@@ -22,11 +31,20 @@ void ExecutionUnit::Execute(){
 	stack<BaseObject *> s;
 	for(Instruction instruction : this->blockstack.top()->bytecode){
 		if(DEBUG){cout<<"now executing:"<<instruction.InstructionCode<<", arg:"<<instruction.InstructionArgument<<endl;}
+		if(DEBUG){printobjectstack(s);}
 		switch(instruction.InstructionCode){
-			case NOP : break;
-			case STOP_EXECUTION :
+			case NOP: 
+				break;
+			case STOP_EXECUTION:
 				if(DEBUG){cout<<"exiting program"<<endl;}
 				exit(0);
+				break;
+			case LOAD_CONST:
+				s.push(
+					this->blockstack.top()->constants[
+						instruction.InstructionArgument
+						]
+					);
 				break;
 			
 		}

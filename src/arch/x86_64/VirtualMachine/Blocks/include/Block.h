@@ -4,8 +4,10 @@
 
 #include <iostream>
 #include <vector>
+#include <string>
 #include <stack>
 #include <Instruction.h>
+#include <Types.h>
 
 using namespace std;
 
@@ -13,8 +15,8 @@ using namespace std;
 struct Block{
 	public:
 		vector<Instruction> bytecode;
-		vector<unsigned char> constants;
-		vector<unsigned char> names;
+		vector<BaseObject *> constants;
+		vector<string> names;
 };
 
 #endif

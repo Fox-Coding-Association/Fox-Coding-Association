@@ -16,7 +16,11 @@ int main(int argc, char *argv[]){
 	Block * B = new Block();
 	B->bytecode = {
 		Instruction {NOP},
+		Instruction {LOAD_CONSTANT,0},
 		Instruction {STOP_EXECUTION}
+	};
+	B->constants = {
+		new Integer(3)
 	};
 
 	ExecutionUnit * exec = new ExecutionUnit();
