@@ -31,8 +31,8 @@ enum iname {
 	JUMP, //execute(block)
 
 	//types
-	CEATE_LIST, //TOS = list(TOS...TOS[arg])
-	CEATE_DICT, //TOS = dict(TOS:TOS1...TOS[arg]:TOS[arg+1])
+	CREATE_LIST, //TOS = list(TOS...TOS[arg])
+	CREATE_DICT, //TOS = dict(TOS:TOS1...TOS[arg]:TOS[arg+1])
 
 
 	//other
