@@ -1,14 +1,14 @@
 
-#ifndef INTEGER_H
-#define INTEGER_H
+#ifndef FLOAT_H
+#define FLOAT_H
 
 #include <BaseObject.h>
 #include <string>
 
-class Integer : public BaseObject{
+class Float : public BaseObject{
 	public:
-		int val = 0;
-		Integer(int val = 0);
+		double val = 0;
+		Float(double val = 0);
 		virtual BaseObject * __add__(BaseObject * other);
 		virtual BaseObject * __sub__(BaseObject * other);
 		virtual BaseObject * __mul__(BaseObject * other);
