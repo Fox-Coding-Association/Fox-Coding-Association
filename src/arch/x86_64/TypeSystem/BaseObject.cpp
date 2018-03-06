@@ -11,6 +11,12 @@ string BaseObject::__type__(){
 	return "BaseObject";
 }
 
+string BaseObject::__repr__(){
+	return "BaseObject";
+}
+
+
+
 
 
 

@@ -15,6 +15,10 @@ string Float::__type__(){
 	return "Float";
 }
 
+string Float::__repr__(){
+	return to_string(this->val);
+}
+
 BaseObject * Float::__add__(BaseObject * other){
 	if(other->__type__() == "Integer"){
 		return new Float(this->val + (int)(dynamic_cast<Integer *>(other)->val));

@@ -14,6 +14,11 @@ string Integer::__type__(){
 	return "Integer";
 }
 
+string Integer::__repr__(){
+	return to_string(this->val);
+}
+
+/* implements adding an integer to other types (Supported types are Integer and Float as of now)*/
 BaseObject * Integer::__add__(BaseObject * other){
 	if(other->__type__() == "Integer"){
 		return new Integer(this->val + dynamic_cast<Integer *>(other)->val);
@@ -23,6 +28,8 @@ BaseObject * Integer::__add__(BaseObject * other){
 		exit(1); //error handler
 	}
 }
+
+/* implements subtracting an integer from other types (Supported types are Integer and Float as of now)*/
 BaseObject * Integer::__sub__(BaseObject * other){
 	if(other->__type__() == "Integer"){
 		return new Integer(this->val - dynamic_cast<Integer *>(other)->val);
@@ -33,6 +40,7 @@ BaseObject * Integer::__sub__(BaseObject * other){
 	}
 }
 
+/* implements multiplying an integer with other types (Supported types are Integer and Float as of now)*/
 BaseObject * Integer::__mul__(BaseObject * other){
 	if(other->__type__() == "Integer"){
 		return new Integer(this->val * dynamic_cast<Integer *>(other)->val);
@@ -43,6 +51,7 @@ BaseObject * Integer::__mul__(BaseObject * other){
 	}
 }
 
+/* implements dividing an integer with other types (Supported types are Integer and Float as of now)*/
 BaseObject * Integer::__div__(BaseObject * other){
 	if(other->__type__() == "Integer"){
 		return new Integer(this->val / dynamic_cast<Integer *>(other)->val);
@@ -53,6 +62,7 @@ BaseObject * Integer::__div__(BaseObject * other){
 	}
 }
 
+/* implements dividing an integer with other types (Supported types are Integer and Float as of now)*/
 BaseObject * Integer::__pow__(BaseObject * other){	
 	if(other->__type__() == "Integer"){
 		return new Integer(pow(this->val, dynamic_cast<Integer *>(other)->val));
@@ -63,6 +73,7 @@ BaseObject * Integer::__pow__(BaseObject * other){
 	}
 }
 
+/* implements dividing an integer with other types (Supported types are Integer and Float as of now)*/
 BaseObject * Integer::__mod__(BaseObject * other){
 	if(other->__type__() == "Integer"){
 		return new Integer( this->val % dynamic_cast<Integer *>(other)->val);

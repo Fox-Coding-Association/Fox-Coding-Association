@@ -16,8 +16,9 @@ class Float : public BaseObject{
 		virtual BaseObject * __pow__(BaseObject * other);
 		virtual BaseObject * __mod__(BaseObject * other);
 
-		virtual std::string __type__();
 		virtual BaseObject * __copy__();
+		virtual std::string __type__();
+		virtual std::string __repr__();
 
 };
 

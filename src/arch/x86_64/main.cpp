@@ -3,7 +3,7 @@
 #include <Integer.h>
 #include <Float.h>
 
-#include <vmstack.h>
+#include <VmStack.h>
 
 using namespace std;
 
@@ -13,6 +13,13 @@ int main(int argc, char *argv[]){
 	BaseObject * c = a->__pow__(b);
 
 	VmStack<BaseObject *> * s = new VmStack<BaseObject *>();
+	s->push(c);
+	s->push(a);
 
-	cout << dynamic_cast<Float *>(c)->val << endl;
+	s->print();
+
+	cout << dynamic_cast<Float *>(s->top())->val << endl;
+
+	s->pop();
+	s->pop();
 }

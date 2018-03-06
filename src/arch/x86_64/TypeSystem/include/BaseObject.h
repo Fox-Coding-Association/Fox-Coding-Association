@@ -17,9 +17,10 @@ class BaseObject{
 		virtual BaseObject * __div__(BaseObject * other) = 0;
 		virtual BaseObject * __pow__(BaseObject * other) = 0;
 		virtual BaseObject * __mod__(BaseObject * other) = 0;
+		
 		virtual BaseObject * __copy__() = 0;
-
 		virtual std::string __type__();
+		virtual std::string __repr__();
 };
 
 
