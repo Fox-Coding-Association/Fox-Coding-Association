@@ -4,8 +4,7 @@
 #include <cmath>
 using namespace std;
 
-#include <Float.h>
-#include <Integer.h>
+#include <Types.h>
 
 Float::Float(double val){
 	this->val = val;

@@ -16,11 +16,14 @@ int main(int argc, char *argv[]){
 	Block * B = new Block();
 	B->bytecode = {
 		Instruction {NOP},
-		Instruction {LOAD_CONSTANT,0},
+		Instruction {LOAD_CONST,0},
+		Instruction {LOAD_CONST,1},
+		Instruction {BINARY_ADD},
 		Instruction {STOP_EXECUTION}
 	};
 	B->constants = {
-		new Integer(3)
+		new Integer(3),
+		new Integer(5),
 	};
 
 	ExecutionUnit * exec = new ExecutionUnit();

@@ -4,5 +4,7 @@
 #include <BaseObject.h>
 #include <Integer.h>
 #include <Float.h>
+#include <List.h>
+#include <Dict.h>
 
 #endif

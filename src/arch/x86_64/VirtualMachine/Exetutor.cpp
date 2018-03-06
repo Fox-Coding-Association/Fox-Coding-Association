@@ -31,7 +31,6 @@ void ExecutionUnit::Execute(){
 	stack<BaseObject *> s;
 	for(Instruction instruction : this->blockstack.top()->bytecode){
 		if(DEBUG){cout<<"now executing:"<<instruction.InstructionCode<<", arg:"<<instruction.InstructionArgument<<endl;}
-		if(DEBUG){printobjectstack(s);}
 		switch(instruction.InstructionCode){
 			case NOP: 
 				break;
@@ -45,9 +44,18 @@ void ExecutionUnit::Execute(){
 						instruction.InstructionArgument
 						]
 					);
-				break;
-			
+				break;	
+			case BINARY_ADD:
+				BaseObject * a = s.top();
+				s.pop();
+				BaseObject * b = s.top();
+				s.pop();
+				s.push(
+					b->__add__(a)
+					);
+				break;	
 		}
+		if(DEBUG){printobjectstack(s);}
 	}
 }
 

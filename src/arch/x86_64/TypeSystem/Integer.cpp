@@ -3,8 +3,7 @@
 #include <math.h>
 using namespace std;
 
-#include <Float.h>
-#include <Integer.h>
+#include <Types.h>
 
 Integer::Integer(int val){
 	this->val = val;
