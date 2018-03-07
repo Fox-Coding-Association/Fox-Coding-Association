@@ -28,30 +28,12 @@
 		<table class="table table-hover">
 		  <thead>
 		    <tr>
-		      <th scope="col">#</th>
-		      <th scope="col">First</th>
-		      <th scope="col">Last</th>
-		      <th scope="col">Handle</th>
+		      <th scope="col">name</th>
+		      <th scope="col">language</th>
 		    </tr>
 		  </thead>
-		  <tbody>
-		    <tr>
-		      <th scope="row">1</th>
-		      <td>Mark</td>
-		      <td>Otto</td>
-		      <td>@mdo</td>
-		    </tr>
-		    <tr>
-		      <th scope="row">2</th>
-		      <td>Jacob</td>
-		      <td>Thornton</td>
-		      <td>@fat</td>
-		    </tr>
-		    <tr>
-		      <th scope="row">3</th>
-		      <td colspan="2">Larry the Bird</td>
-		      <td>@twitter</td>
-		    </tr>
+		  <tbody id="repos">
+
 		  </tbody>
 		</table>
 
@@ -69,7 +51,6 @@
 		    xhr.onload = function() {
 		      var status = xhr.status;
 		      if (status === 200) {
-		      	// JSON.parse(xhr.response)
 		        callback(null, xhr.response);
 		      } else {
 		        callback(status, xhr.response);
@@ -80,7 +61,15 @@
 		
 
 		getJSON("https://api.github.com/orgs/Fox-Coding-Association/repos",function(status,res){
-			console.log(res)
+			for(let i of res){
+				document.getElementById().innerHTML += `
+				<tr>
+			      <th scope="row">1</th>
+			      <td> <a href=` + i.html_url + `>` + i.name + `</a></td>
+			      <td>` + i.language + `</td>
+			    </tr>
+				`
+			}
 		})
 	</script>
 
