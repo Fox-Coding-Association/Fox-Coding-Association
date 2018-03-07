@@ -39,8 +39,16 @@
 
 	</div>
 	<div class="jumbotron">
+		<table class="table table-hover">
+		  <thead>
+		    <tr>
+		      <th scope="col">name</th>
+		    </tr>
+		  </thead>
+		  <tbody id="members">
 
-
+		  </tbody>
+		</table>
 	</div>
 
 	<script>
@@ -64,9 +72,18 @@
 			for(let i of res){
 				document.getElementById("repos").innerHTML += `
 				<tr>
-			      <th scope="row">1</th>
 			      <td> <a href=` + i.html_url + `>` + i.name + `</a></td>
 			      <td>` + i.language + `</td>
+			    </tr>
+				`
+			}
+		})
+
+		getJSON("https://api.github.com/orgs/Fox-Coding-Association/repos",function(status,res){
+			for(let i of res){
+				document.getElementById("members").innerHTML += `
+				<tr>
+			      <td> <a href=` + i.html_url + `>` + i.login + `</a></td>
 			    </tr>
 				`
 			}
