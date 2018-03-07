@@ -71,10 +71,13 @@
 
 		getJSON("https://api.github.com/orgs/Fox-Coding-Association/repos",function(status,res){
 			for(let i of res){
+				if(i.description == null){
+					i.description = "N/A"
+				}
 				document.getElementById("repos").innerHTML += `
 				<tr>
 			      <td> <a href=` + i.html_url + `>` + i.name + `</a></td>
-			      <td>` + i.description?i.description:"N/A" + `</a></td>
+			      <td>` + i.description + `</a></td>
 			      <td>` + i.language + `</td>
 			    </tr>
 				`
