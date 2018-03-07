@@ -81,7 +81,7 @@
 			}
 		})
 
-		getJSON("https://api.github.com/orgs/Fox-Coding-Association/repos",function(status,res){
+		getJSON("https://api.github.com/orgs/Fox-Coding-Association/members",function(status,res){
 			for(let i of res){
 				document.getElementById("members").innerHTML += `
 				<tr>
