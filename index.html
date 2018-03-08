@@ -69,7 +69,7 @@
 		};
 		
 
-		getJSON("https://api.github.com/orgs/Fox-Coding-Association/repos",function(status,res){
+		getJSON("https://api.github.com/orgs/FoxCA/repos",function(status,res){
 			for(let i of res){
 				if(i.description == null){
 					i.description = "N/A"
@@ -84,7 +84,7 @@
 			}
 		})
 
-		getJSON("https://api.github.com/orgs/Fox-Coding-Association/members",function(status,res){
+		getJSON("https://api.github.com/orgs/FoxCA/members",function(status,res){
 			for(let i of res){
 				document.getElementById("members").innerHTML += `
 				<tr>
